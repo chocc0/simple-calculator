@@ -1,0 +1,37 @@
+#calculator-container {
+    border: 5px solid black;
+    width: 200px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#display {
+    height: 50px;
+    border: 2px solid lightblue;
+}
+
+#button-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#top-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+#number-container {
+    display: grid;
+    flex: auto;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+#operator-container {
+    display: flex;
+    flex-flow: column-reverse;
+    gap: 10px;
+}
