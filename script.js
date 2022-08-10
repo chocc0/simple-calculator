@@ -24,7 +24,6 @@ function operate(operation, a, b) {
 //testing vvv
 
 let num1 = parseInt(prompt())
-console.log(typeof num1)
 let num2 = parseInt(prompt())
 let choice = prompt()
 
