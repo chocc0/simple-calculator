@@ -24,18 +24,32 @@ function operate(operation, a, b) {
 }
 
 //display numbers
-let display = document.getElementById("display");
+let display = document.getElementById("current");
+let prevDisplay = document.getElementById("past");
 
 //display number buttons
 let numBtns = document.querySelectorAll("#number-container button");
 
 numBtns.forEach(button => {
-    button.addEventListener('click', (e) => {
+    button.addEventListener('click', () => {
         display.textContent += (button.textContent)
     })
 })
 
-//display operator buttons
+//backspace button
+let backspace = document.getElementById("backspace");
+
+backspace.addEventListener('click', () => {
+    if (display.textContent.slice(-1) === ' ') {
+        let sliced = display.textContent.slice(0,-3);
+        display.textContent = sliced
+    } else {
+        let sliced = display.textContent.slice(0,-1);
+        display.textContent = sliced
+    }
+})
+
+//calculate and display operator buttons
 let operatorBtns = document.querySelectorAll("#operator-container #operators button");
 let calculate = document.querySelector("#calculate")
 
@@ -48,7 +62,8 @@ operatorBtns.forEach(button => {
 calculate.addEventListener('click', () => {
     let contentArray = display.textContent.split(" ");
     let result = operate(contentArray[1], contentArray[0], contentArray[2])
-    display.textContent = result
+    prevDisplay.textContent = display.textContent;
+    display.textContent = result;
 })
 
 
