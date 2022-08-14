@@ -7,12 +7,23 @@
     gap: 10px;
 }
 
-#display {
+#display-container {
     height: 50px;
     border: 2px solid lightblue;
     display: flex;
+    flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
+}
+
+div #past {
+    border: 1px solid lightsteelblue;
+    font-size: 15px;
+}
+
+div #current {
+    border: 1px solid black;
+    font-size: 25px;
 }
 
 #top-buttons {
